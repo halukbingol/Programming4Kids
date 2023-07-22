@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid-v5</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+</head>
+<body>
+
+<h3>Check console</h3>
+<h3>reconfigurable grid with carrots</h3>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V define snap
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+
+    // borders
+    s.rect(0, 0, 600, 300)
+        .attr({
+            stroke: "red",
+            strokeWidth: 1,
+            fill: "none"
+        });
+    // ******************************* A
+
+</script>
+
+
+<script>
+    "use strict"; // keep this
+
+    /**
+     * Draw a square with top-left point at (x, y) with side length
+     * @param x {number} x of top-left
+     * @param y {number} y of top-left
+     * @param sideLength {number} side length
+     */
+    function drawSquare(x, y, sideLength) {
+        s.attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            // strokeDasharray: "5,2"
+        });
+        s.line(x, y, x + sideLength, y);
+        s.line(x + sideLength, y, x + sideLength, y + sideLength);
+        s.line(x + sideLength, y + sideLength, x, y + sideLength);
+        s.line(x, y + sideLength, x, y);
+    }
+
+    /**
+     * Draw circle at (x_column, y_row) of grid of delta_X and delta_Y.
+     * @param x_column {number} index in x direction
+     * @param y_row {number} index in y direction
+     * @param delta_X {number} displacement in x
+     * @param delta_Y {number} displacement in y
+     */
+    function drawACell(x_column, y_row, delta_X, delta_Y) {
+        let x = y_TL + x_column * delta_Y;
+        let y = x_TL + y_row * delta_X;
+        drawSquare(x, y, delta_X);
+    }
+
+    /**
+     * Draw carrot at (row, column) of grid of delta_X and delta_Y.
+     * @param row
+     * @param column
+     * @param delta_X
+     * @param delta_Y
+     */
+    function drawCarrot(x_column, y_row, delta_X, delta_Y) {
+        let x = y_TL + x_column * delta_Y;
+        let y = x_TL + y_row * delta_X;
+        s.text(x, y, "Carrot")
+            .attr({
+                stroke: "red",
+                strokeWidth: 1,
+                // strokeDasharray: "5,2"
+            });
+    }
+
+    //
+    let x_TL = 50; // x of top-left
+    let y_TL = 60; // y of top-left
+    let width = 5; // number of columns (use odd number)
+    let height = 7; // number of rows
+    let sideLength = 50; // side length of grid
+
+    // see utility-smart2DArrayGenerator.html for easier configuration
+    let arrConfig = [
+        [0, 2, 1, 0, 1], // row-0
+        [1, 0, 1, 1, 1]  // row-1
+    ];
+
+    for (let y_row = 0; y_row < arrConfig.length; y_row++) {
+        for (let x_column = 0; x_column < arrConfig[y_row].length; x_column++) {
+            if (arrConfig[y_row][x_column] === 1) {
+                drawACell(x_column, y_row, sideLength, sideLength);
+            } else if (arrConfig[y_row][x_column] === 2) {
+                drawACell(x_column, y_row, sideLength, sideLength);
+                drawCarrot(x_column, y_row, sideLength, sideLength);
+            }
+
+        }
+    }
+
+</script>
+
+</body>
+</html>

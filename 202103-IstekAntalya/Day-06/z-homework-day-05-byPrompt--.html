@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>turtle interface</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+    <script src="turtle-hw-solution.js"></script>
+</head>
+<body>
+
+<h3>Check console</h3>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<script>
+    "use strict"; // keep this
+
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+
+    // borders
+    s.rect(0, 0, 600, 300)
+        .attr({
+            stroke: "red",
+            strokeWidth: 1,
+            fill: "none"
+        });
+</script>
+
+<script>
+    "use strict"; // keep this
+
+    // initial values of turtle
+    // turtleX = 70;
+    // turtleY = 90;
+    // turtleDirection = "N";
+    // turtleStep = 40;
+    turtleInitialize(70, 90, "N", 40);
+
+    // draw initially
+    turtleDraw(turtleX, turtleY, turtleStep, turtleDirection);
+
+    // get the command
+    let command = window.prompt("enter F, R, L for forward, right, left moves:");
+    // do the necessary changes according to the command
+    if (command === "F") {
+        turtleForward();
+        // do the necessary changes according to the command
+    } else if (command === "R") {
+        turtleDirection = turtleRight(turtleDirection);
+        // do the necessary changes according to the command
+    } else if (command === "L") {
+        turtleDirection = turtleLeft(turtleDirection);
+        // do the necessary changes according to the command
+    } else {
+        alert("***ERROR*** You entered " + command + ". Please enter one of F, R, L.");
+    }
+    // redraw after the command is applied
+    turtleDraw(turtleX, turtleY, turtleStep, turtleDirection);
+
+</script>
+
+</body>
+</html>

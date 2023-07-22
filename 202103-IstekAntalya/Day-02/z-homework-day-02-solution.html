@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hw-02 solution</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+</head>
+<body>
+
+<h3>Check console</h3>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V intro
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+    // ******************************* A
+
+</script>
+
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V
+    // borders
+    s.rect(0, 0, 600, 300)
+        .attr({
+            stroke: "red",
+            strokeWidth: 1,
+            fill: "none"
+        });
+
+</script>
+
+
+<script>
+    "use strict"; // keep this
+
+
+    /**
+     * Draw turtle
+     * @param x {number} x of center
+     * @param y {number} y of center
+     * @param a {number} side length
+     * @param direction {"N", "E", "S", "W"}
+     */
+    let turtleDraw = function (x, y, a, direction) {
+        let d = a / 10;
+        let d3 = 3 * d;
+        let x_f, y_f; // face
+        let x_r, y_r; // right
+        let x_l, y_l; // left
+
+        // direction is "N"
+        x_f = x;
+        y_f = y - d3;
+        x_r = x + d;
+        y_r = y;
+        x_l = x - d;
+        y_l = y;
+
+        // draw
+        s.line(x_f, y_f, x_r, y_r)
+            .attr({
+                stroke: "#1e6bcd",
+                strokeWidth: 3
+            });
+        s.line(x_r, y_r, x_l, y_l)
+            .attr({
+                stroke: "#1e6bcd",
+                strokeWidth: 3
+            });
+        s.line(x_l, y_l, x_f, y_f)
+            .attr({
+                stroke: "#1e6bcd",
+                strokeWidth: 3
+            });
+    }
+
+
+    /**
+     * Draw a square
+     * @param x {number} x of upper left corner
+     * @param y {number} y of upper left corner
+     * @param a {number} side length
+     */
+    let drawSquare = function (x, y, a) {
+        s.line(x, y, x + a, y)
+            .attr({
+                stroke: "#cccccc",
+                strokeWidth: 3
+            });
+        s.line(x + a, y, x + a, y + a)
+            .attr({
+                stroke: "#cccccc",
+                strokeWidth: 3
+            });
+        s.line(x + a, y + a, x, y + a)
+            .attr({
+                stroke: "#cccccc",
+                strokeWidth: 3
+            });
+        s.line(x, y + a, x, y)
+            .attr({
+                stroke: "#cccccc",
+                strokeWidth: 3
+            });
+
+    }
+
+
+    // ******************************* V
+    // testing
+    let x0 = 50;
+    let y0 = 100;
+    let a = 50;
+
+    //
+    x0 = x0 + a;
+    drawSquare(x0, y0, a);
+    turtleDraw(x0 + a / 2, y0 + a / 2, a, "N");
+    //
+    x0 = x0 + a;
+    drawSquare(x0, y0, a);
+    turtleDraw(x0 + a / 2, y0 + a / 2, a, "E");
+    //
+    x0 = x0 + a;
+    drawSquare(x0, y0, a);
+    turtleDraw(x0 + a / 2, y0 + a / 2, a, "S");
+    //
+    x0 = x0 + a;
+    drawSquare(x0, y0, a);
+    turtleDraw(x0 + a / 2, y0 + a / 2, a, "W");
+    // ******************************* A
+
+</script>
+
+</body>
+</html>

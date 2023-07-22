@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+</head>
+<body>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V intro
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+    // ******************************* A
+
+</script>
+
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V
+    // borders
+    s.rect(0, 0, 600, 300)
+        .attr({
+            stroke: "red",
+            strokeWidth: 1,
+            fill: "none"
+        });
+
+</script>
+
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V
+    //
+
+
+    function drawSquare(x, y, a) {
+        s.line(x, y, x + a, y)
+            .attr({
+                stroke: "blue",
+                strokeWidth: 3,
+                strokeDasharray: "5,2"
+            });
+        s.line(x + a, y, x + a, y + a)
+            .attr({
+                stroke: "blue",
+                strokeWidth: 3,
+                strokeDasharray: "5,2"
+            });
+        s.line(x + a, y + a, x, y + a)
+            .attr({
+                stroke: "blue",
+                strokeWidth: 3,
+                strokeDasharray: "5,2"
+            });
+        s.line(x, y + a, x, y)
+            .attr({
+                stroke: "red",
+                strokeWidth: 3,
+                strokeDasharray: "5,2"
+            });
+    }
+
+    let x0 = 50;
+    let y0 = 100;
+    let a = 50;
+
+    drawSquare(x0, y0, a);
+    x0 = x0 + a;
+    drawSquare(x0, y0, a);
+    x0 = x0 + a;
+    drawSquare(x0, y0, a);
+
+
+    // ******************************* A
+
+</script>
+
+</body>
+</html>

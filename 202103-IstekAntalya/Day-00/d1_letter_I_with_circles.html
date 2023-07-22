@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+</head>
+<body>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<script>
+
+    // ******************************* V intro
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+    // ******************************* V intro
+
+</script>
+
+
+<script>
+
+    // ******************************* V intro
+    let x_0 = 150;
+    let y_0 = 150;
+    let r_0 = 10;
+    let w = 5;
+    let h = 6;
+    //
+    let colorFill_1 = "#bada55";
+    let colorStroke_1 = "#000";
+    let strokeWidth_1 = 5;
+    //
+    let colorFill_2 = "#bada55";
+    let colorStroke_2 = "#000";
+    let strokeWidth_2 = 5;
+    //
+    let y_1 = y_0 + 2 * r_0 * h;
+    for (let i = 0; i < w; i++) {
+        s.circle(x_0 + 2 * r_0 * i, y_0, r_0)
+            .attr({
+                fill: colorFill_1,
+                stroke: colorStroke_1,
+                strokeWidth: strokeWidth_1
+            });
+        s.circle(x_0 + 2 * r_0 * i, y_1, r_0)
+            .attr({
+                fill: colorFill_1,
+                stroke: colorStroke_1,
+                strokeWidth: strokeWidth_1
+            });
+    }
+    let w2 = w / 2 - .5;
+    let x_1 = x_0 + 2 * r_0 * w2;
+    for (let i = 0; i < h; i++) {
+        s.circle(x_1, y_0 + 2 * r_0 * i, r_0)
+            .attr({
+                fill: colorFill_1,
+                stroke: colorStroke_1,
+                strokeWidth: strokeWidth_1
+            });
+    }
+    // ******************************* V intro
+
+</script>
+
+</body>
+</html>

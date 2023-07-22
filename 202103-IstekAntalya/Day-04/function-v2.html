@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function version 2</title>
+</head>
+<body>
+
+<h3>see console</h3>
+
+<script>
+    "use strict"; // keep this
+
+    // let x=7;
+    // let y=8;
+    // let z = x*x+y*y;
+
+    let x;
+    let y;
+    let z;
+
+    let f2 = function (a, b) {
+        let aSquared = a * a;
+        let bSquared = b * b;
+        let cSquared = aSquared + bSquared;
+        let c = Math.sqrt(cSquared);
+        console.log(a + " squared + " + b + " squared equals " + c);
+        return c;
+        // return;
+    }
+
+    x = 7;
+    y = 8;
+    z = f2(x, y);
+    console.log("z:", z);
+
+
+    // x * x + y * y;
+    // console.log("7 kare + 8 kare toplami="+z);
+    // console.log(x ,"squared+" ,y ,"equals" ,+z);
+    // console.log(x ,"squared+" ,y ,"squared equals" ,+z);
+    // console.log(x +"squared+" +y +"squared equals" +z);
+    // console.log(x + " squared + " + y + " squared equals " + z);
+
+
+    x = 11;
+    y = 31;
+    z = f2(x, y);
+
+    // z = x * x + y * y;
+    // console.log("7 kare + 8 kare toplami="+z);
+    // console.log(x ,"squared+" ,y ,"equals" ,+z);
+    // console.log(x ,"squared+" ,y ,"squared equals" ,+z);
+    // console.log(x +"squared+" +y +"squared equals" +z);
+    // console.log(x + " squared + " + y + " squared equals " + z);
+
+
+    x = 21;
+    y = 51;
+    z = f2(x, y);
+    // z = x * x + y * y;
+    // console.log("7 kare + 8 kare toplami="+z);
+    // console.log(x ,"squared+" ,y ,"equals" ,+z);
+    // console.log(x ,"squared+" ,y ,"squared equals" ,+z);
+    // console.log(x +"squared+" +y +"squared equals" +z);
+    // console.log(x + " squared + " + y + " squared equals " + z);
+
+</script>
+
+</body>
+</html>

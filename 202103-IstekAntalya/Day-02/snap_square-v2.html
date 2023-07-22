@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+</head>
+<body>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V intro
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+    // ******************************* A
+
+</script>
+
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V
+    // borders
+    let borders = s.rect(0, 0, 600, 300)
+        .attr({
+            stroke: "red",
+            strokeWidth: 1,
+            fill: "none"
+        });
+
+</script>
+
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V
+    //
+
+    let x0 = 50;
+    let y0 = 100;
+    let a = 50;
+
+
+    // square 1
+    // line
+    s.line(x0, y0, x0 + a, y0)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    // // line
+    s.line(x0 + a, y0, x0 + a, y0 + a)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    s.line(x0 + a, y0 + a, x0, y0 + a)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    s.line(x0, y0 + a, x0, y0)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+
+
+    x0 = x0 + a;
+
+
+
+    // square 2
+    // line
+    s.line(x0, y0, x0 + a, y0)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    // // line
+    s.line(x0 + a, y0, x0 + a, y0 + a)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    s.line(x0 + a, y0 + a, x0, y0 + a)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    s.line(x0, y0 + a, x0, y0)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+
+
+    x0 = x0 + a;
+
+
+
+    // square 3
+    // line
+    s.line(x0, y0, x0 + a, y0)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    // // line
+    s.line(x0 + a, y0, x0 + a, y0 + a)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    s.line(x0 + a, y0 + a, x0, y0 + a)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+    s.line(x0, y0 + a, x0, y0)
+        .attr({
+            stroke: "blue",
+            strokeWidth: 3,
+            strokeDasharray: "5,2"
+        });
+
+    // ******************************* A
+
+</script>
+
+</body>
+</html>

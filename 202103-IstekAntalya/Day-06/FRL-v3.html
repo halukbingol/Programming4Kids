@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FRL-v3</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+    <script src="turtle-v4.js"></script>
+  </head>
+  <body>
+    <h3>Check console</h3>
+
+    <svg
+      id="id_svg"
+      xmlns="http://www.w3.org/2000/svg"
+      width="600"
+      height="300"
+    ></svg>
+
+    <script>
+      "use strict"; // keep this
+
+      let s = Snap("#id_svg");
+      s.attr({
+        viewBox: "0 0 600 300",
+      });
+
+      // borders
+      s.rect(0, 0, 600, 300).attr({
+        stroke: "red",
+        strokeWidth: 1,
+        fill: "none",
+      });
+    </script>
+
+    <button onclick="call_R()">R</button>
+
+    <script>
+      "use strict"; // keep this
+
+      function call_R() {
+        console.log("button R");
+        turtleRight();
+      }
+    </script>
+
+    <script>
+      turtleDraw();
+      turtleForward();
+      turtleRight();
+      turtleForward();
+      turtleForward();
+    </script>
+  </body>
+</html>

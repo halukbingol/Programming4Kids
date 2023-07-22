@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TurtleGraphics-v1</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+    <script src="turtle-v1.js"></script>
+</head>
+<body onload="init()">
+<h3>See the console</h3>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<button onclick="askUser()">Get user input</button>
+
+<script>
+    "use strict"; // keep this
+
+    let s;
+    //
+    let turtleX = 10;
+    let turtleY = 30;
+    let a = 50;
+    let direction = "N";
+
+    function askUser() {
+        let input;
+        input = window.prompt("Enter R or L");
+        if (input === "R") {
+            direction = turtleRight(direction);
+        } else if (input === "L") {
+            direction = turtleLeft(direction);
+        } else {
+            alert("You entered " + input);
+        }
+        turtleDraw(turtleX, turtleY, a, direction);
+    }
+
+    function init() {
+        console.log("init is working");
+        snapInit();
+        //
+        turtleDraw(turtleX, turtleY, a, direction);
+        //
+    }
+
+    function snapInit() {
+        s = Snap("#id_svg");
+        s.attr({
+            viewBox: "0 0 600 300"
+        });
+
+        s.rect(0, 0, 600, 300)
+            .attr({
+                stroke: "red",
+                strokeWidth: 1,
+                fill: "none"
+            });
+    }
+
+</script>
+
+</body>
+</html>

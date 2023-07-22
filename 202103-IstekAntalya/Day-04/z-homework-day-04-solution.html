@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-homework-day-04 solution</title>
+</head>
+<body>
+
+<h3>See the console</h3>
+
+<script>
+    "use strict"; // keep this
+
+    let getPerimeterA = function (a, b, c, d) {
+        // no need for c and d
+        return 2 * (a + b);
+    }
+
+    let getAreaA = function (a, b, c, d) {
+        // no need for c and d
+        return a * b;
+    }
+
+    let getDiagonalA = function (a, b, c, d) {
+        // no need for c and d
+        return hypotenuse(a, b);
+    }
+
+    let getPerimeterB = function (Ax, Ay, Bx, By, Cx, Cy, Dx, Dy) {
+        let sum = 0;
+        // `a += b` is short form of `a = a + b`
+        sum += distance(Ax, Ay, Bx, By);
+        sum += distance(Bx, By, Cx, Cy);
+        sum += distance(Cx, Cy, Dx, Dy);
+        sum += distance(Dx, Dy, Ax, Ay);
+        return sum;
+    }
+
+    let getAreaB = function (Ax, Ay, Bx, By, Cx, Cy, Dx, Dy) {
+        // no need for Dx and Dy
+        let sideAB = distance(Ax, Ay, Bx, By);
+        let sideBC = distance(Bx, By, Cx, Cy);
+        return sideAB * sideBC;
+    }
+
+    let getDiagonalB = function (Ax, Ay, Bx, By, Cx, Cy, Dx, Dy) {
+        // no need for Dx and Dy
+        let sideAB = distance(Ax, Ay, Bx, By);
+        let sideBC = distance(Bx, By, Cx, Cy);
+        return hypotenuse(sideAB, sideBC);
+    }
+
+
+    // utility functions
+
+    /**
+     * Returns the distance of hypotenuse given the sides
+     * @param side1 {number} length of side 1
+     * @param side2 {number} length of side 2
+     */
+    let hypotenuse = function (side1, side2) {
+        let squared1 = side1 * side1;
+        let squared2 = side2 * side2;
+        return Math.sqrt(squared1 + squared2);
+    }
+
+    /**
+     * Returns distance from point A to point B.
+     * @param Ax {number} x coordinate of point A
+     * @param Ay {number} y coordinate of point A
+     * @param Bx {number} x coordinate of point B
+     * @param By {number} y coordinate of point B
+     * @returns {number} the distance
+     */
+    let distance = function (Ax, Ay, Bx, By) {
+        let distanceInX = Ax - Bx; // negative ?
+        let distanceInY = Ay - By; // negative ?
+        return hypotenuse(distanceInX, distanceInY);
+    }
+
+
+    // ******************************** testing
+    let n1; // number 1
+    let n2; // number 2
+    //
+    let P1x, P1y; // Point P1
+    let P2x, P2y; // Point P2
+    let P3x, P3y; // Point P3
+    let P4x, P4y; // Point P4
+    //
+    let expected;
+
+
+    // ******************************** test for hypotenuse
+    n1 = 3, n2 = 4;
+    expected = 5;
+    console.log("hypotenuse()", " expected: ", expected, " calculated: ", hypotenuse(n1, n2));
+
+
+    // ******************************** test for sideLength
+    P1x = 0, P1y = 0;
+    P2x = 1, P2y = 0;
+    expected = 1;
+    console.log("distance()", " expected: ", expected, " calculated: ", distance(P1x, P1y, P2x, P2y));
+    //
+    P1x = 0, P1y = 0;
+    P2x = 0, P2y = 1;
+    expected = 1;
+    console.log("distance()", "expected: ", expected, " calculated: ", distance(P1x, P1y, P2x, P2y));
+    //
+    P1x = 0, P1y = 0;
+    P2x = 1, P2y = 1;
+    expected = Math.sqrt(2);
+    console.log("distance()", "expected: ", expected, " calculated: ", distance(P1x, P1y, P2x, P2y));
+
+
+    // ******************************** test for getPerimeterA, getAreaA, getDiagonalA
+    n1 = 3;
+    n2 = 4;
+    console.log("getPerimeterA()", "expected: ", 14, " calculated: ", getPerimeterA(n1, n2, n1, n2));
+    console.log("getAreaA()", "expected: ", 12, " calculated: ", getAreaA(n1, n2, n1, n2));
+    console.log("getDiagonalA()", "expected: ", 5, " calculated: ", getDiagonalA(n1, n2, n1, n2));
+
+    // ******************************** test for getPerimeterB, getAreaB, getDiagonalB
+    P1x = 0, P1y = 0;
+    P2x = 1, P2y = 0;
+    P3x = 1, P3y = 4;
+    P4x = 0, P4y = 4;
+    console.log("getPerimeterB()", "expected: ", 10, " calculated: ", getPerimeterB(P1x, P1y, P2x, P2y, P3x, P3y, P4x, P4y));
+    console.log("getAreaB()", "expected: ", 4, " calculated: ", getAreaB(P1x, P1y, P2x, P2y, P3x, P3y, P4x, P4y));
+    console.log("getDiagonalB()", "expected: ", Math.sqrt(17), " calculated: ", getDiagonalB(P1x, P1y, P2x, P2y, P3x, P3y, P4x, P4y));
+
+
+</script>
+
+</body>
+</html>

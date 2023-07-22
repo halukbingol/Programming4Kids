@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>statement_if</title>
+</head>
+<body>
+
+<h3>Check the console</h3>
+
+<script>
+    "use strict"; // keep this
+
+    // change comparison "5 < 6" or "5 > 6" and see how it runs
+    console.log("block A common");
+    if (5 < 6) {
+        console.log("block B for true");
+    } else {
+        console.log("block C for false");
+    }
+    console.log("block D common");
+
+
+    // ********************************
+    // define absolute value function
+    function abs(x) {
+        if (x < 0) {
+            return -x;
+        }
+        if (x >= 0) {
+            return x;
+        }
+    }
+
+
+    // ********************************
+    // testing
+    let a;
+    console.log("--- testing");
+    a = -1;
+    console.log("a:", a, " |a|:", abs(a));
+    a = 0;
+    console.log("a:", a, " |a|:", abs(a));
+    a = 1;
+    console.log("a:", a, " |a|:", abs(a));
+
+</script>
+
+</body>
+</html>

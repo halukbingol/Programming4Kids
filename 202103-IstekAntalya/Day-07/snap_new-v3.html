@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>snap new</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+</head>
+<body>
+
+<h3>Check console</h3>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V define snap
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+    // ******************************* A
+
+</script>
+
+
+<script>
+    function drawSquare(x_TL, y_TL, sideLength) {
+        s.line(x_TL, y_TL, x_TL + sideLength, y_TL)
+            .attr({
+                stroke: "blue",
+                strokeWidth: 3,
+                strokeDasharray: "5,2"
+            });
+        s.line(x_TL + sideLength, y_TL, x_TL + sideLength, y_TL + sideLength)
+            .attr({
+                stroke: "blue",
+                strokeWidth: 3,
+                strokeDasharray: "5,2"
+            });
+        s.line(x_TL + sideLength, y_TL + sideLength, x_TL, y_TL + sideLength)
+            .attr({
+                stroke: "blue",
+                strokeWidth: 3,
+                strokeDasharray: "5,2"
+            });
+        s.line(x_TL, y_TL + sideLength, x_TL, y_TL)
+            .attr({
+                stroke: "blue",
+                strokeWidth: 3,
+                strokeDasharray: "5,2"
+            });
+
+    }
+
+
+    let x = 30;
+    let y = 50;
+    let a = 30;
+
+    // drawSquare(x, y, a);
+
+    for (let i = 0; i < 7; i++) {
+        drawSquare(x + i * a, y, a);
+    }
+    for (let i = 0; i < 7; i++) {
+        drawSquare(x + i * a, y + a, a);
+    }
+    for (let i = 0; i < 7; i++) {
+        drawSquare(x + i * a, y + 2 * a, a);
+    }
+
+
+    x = 300;
+    y = 110;
+    numOfRow = 14;
+    numOfColumn = 8;
+
+    for (let y_row = 0; y_row < numOfRow; y_row++) {
+        for (let x_column = 0; x_column < numOfColumn; x_column++) {
+            drawSquare(x + x_column * a, y + y_row * a, a);
+        }
+    }
+
+
+    // for (let i = 0; i < 5; i++) {
+    //     s.circle(x + 2 * i * r, y, r);
+    // }
+    // y = 100;
+    // for (let i = 0; i < 5; i++) {
+    //     s.circle(x + 2 * i * r, y, r);
+    // }
+    //
+    // y = 50;
+    //
+    // for (let i = 0; i < 10; i++) {
+    //     console.log(i);
+    //     s.circle(x + 4 * r, y + 2 * i * r, r)
+    //         .attr({
+    //             fill: "#c641a0",
+    //             stroke: "#000",
+    //             strokeWidth: 1
+    //         });
+    // }
+
+</script>
+
+</body>
+</html>

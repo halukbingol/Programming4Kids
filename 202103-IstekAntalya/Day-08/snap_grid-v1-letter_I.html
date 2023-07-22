@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid-v1</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+</head>
+<body>
+
+<h3>Check console</h3>
+<h3>Letter I</h3>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+
+<script>
+    "use strict"; // keep this
+
+    // ******************************* V define snap
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+
+    // borders
+    s.rect(0, 0, 600, 300)
+        .attr({
+            stroke: "red",
+            strokeWidth: 1,
+            fill: "none"
+        });
+    // ******************************* A
+
+</script>
+
+
+<script>
+    "use strict"; // keep this
+
+    /**
+     * Draw circle at (x_column, y_row) of grid of delta_X and delta_Y.
+     * @param x_column {number} index in x direction
+     * @param y_row {number} index in y direction
+     * @param delta_X {number} displacement in x
+     * @param delta_Y {number} displacement in y
+     */
+    function drawACell(x_column, y_row, delta_X, delta_Y) {
+        let x = y_TL + x_column * delta_Y;
+        let y = x_TL + y_row * delta_X;
+        //
+        const radius = delta_X / 2;
+        s.circle(x, y, radius)
+            .attr({
+                fill: "#bada55",
+                stroke: "#000",
+                strokeWidth: 5
+            });
+    }
+
+    //
+    let x_TL = 50; // x of top-left
+    let y_TL = 60; // y of top-left
+    let width = 5; // number of columns (use odd number)
+    let height = 7; // number of rows
+    let sideLength = 10; // side length of grid
+    //
+    let x_column; // column index
+    let y_row; // row index
+
+    // top horizontal
+    y_row = 0;
+    for (let n = 0; n < width; n++) {
+        drawACell(n, y_row, sideLength, sideLength);
+    }
+    // // vertical
+    // x_column = Math.floor(width / 2);
+    // for (let n = 0; n < height; n++) {
+    //     drawACell(x_column, n, sideLength, sideLength);
+    // }
+    // // bottom horizontal
+    // y_row = height;
+    // for (let n = 0; n < width; n++) {
+    //     drawACell(n, y_row, sideLength, sideLength);
+    // }
+
+</script>
+
+</body>
+</html>

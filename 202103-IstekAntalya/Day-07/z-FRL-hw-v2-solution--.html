@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-FRL-hw-v2</title>
+    <script src="../zintBundle/SnapSvg/snap.svg-min.js"></script>
+    <script src="z-turtle-hw-v1-solution.js"></script>
+    <script src="z-road-hw-v1-solution.js"></script>
+</head>
+<body>
+
+<h3>Check console</h3>
+
+<svg id="id_svg" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="300">
+</svg>
+<script>
+    "use strict"; // keep this
+
+    let s = Snap("#id_svg");
+    s.attr({
+        viewBox: "0 0 600 300"
+    });
+
+    // borders
+    s.rect(0, 0, 600, 300)
+        .attr({
+            stroke: "red",
+            strokeWidth: 1,
+            fill: "none"
+        });
+</script>
+
+
+<button onclick="call_F()">F</button>
+<button onclick="call_R()">R</button>
+<button onclick="call_L()">L</button>
+
+<script>
+    "use strict"; // keep this
+
+    function call_F() {
+        console.log("button F");
+        turtleForward();
+    }
+
+    function call_R() {
+        console.log("button R");
+        turtleRight();
+    }
+
+    function call_L() {
+        console.log("button R");
+        turtleLeft();
+    }
+</script>
+
+
+<script>
+    turtleDraw(); // initial position
+    // horizontal path
+    drawSquare(upperLeft_x + 0 * sideLength, upperLeft_y + 0 * sideLength, sideLength);
+    drawSquare(upperLeft_x + 1 * sideLength, upperLeft_y + 0 * sideLength, sideLength);
+    drawSquare(upperLeft_x + 2 * sideLength, upperLeft_y + 0 * sideLength, sideLength);
+    // vertical path
+    drawSquare(upperLeft_x + 2 * sideLength, upperLeft_y + 1 * sideLength, sideLength);
+    drawSquare(upperLeft_x + 2 * sideLength, upperLeft_y + 2 * sideLength, sideLength);
+
+</script>
+
+</body>
+</html>
