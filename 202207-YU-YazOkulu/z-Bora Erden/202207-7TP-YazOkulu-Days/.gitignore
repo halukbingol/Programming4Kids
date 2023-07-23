@@ -1,0 +1,7 @@
+# .gitignore
+
+# dir
+zintBundle/
+
+# files
+Day-0*/z-homework-day-0*.pdf

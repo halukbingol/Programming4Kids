@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>z-3-shapes-all</title>
+        <link rel="shortcut icon" href="../zintBundle/svg/01pi.svg" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" 
+            integrity="sha512-Gk+uNk8NWN235mIkS6B7/424TsDuPDaoAsUekJCKTWLKP6wlaPv+PBGfO7dbvZeibVPGW+mYidz0vL0XaWwz4w==" 
+            crossorigin="anonymous" 
+            referrerpolicy="no-referrer"></script>    
+    </head>
+    <body>
+        <h3>z-3-shapes-all</h3>
+
+        <svg
+            id="id_svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="600"
+            height="300"
+        ></svg>
+
+        <script>
+            "use strict"; // keep this
+
+            // ******************************* V intro
+            const s = Snap("#id_svg");
+            s.attr({
+                viewBox: "0 0 600 300",
+            });
+            // ******************************* V intro
+        </script>
+
+        <script>
+            "use strict"; // keep this
+
+            // ******************************* V intro
+            // borders
+            let borders = s.rect(0, 0, 600, 300).attr({
+                stroke: "red",
+                strokeWidth: 1,
+                fill: "none",
+            });
+            //
+            // line
+            let line_A = s.line(0, 0, 600, 300).attr({
+                stroke: "blue",
+                strokeWidth: 3,
+                strokeDasharray: "5,2",
+            });
+            console.log("outerSVG:", line_A.outerSVG());
+            // console.log("innerSVG:", line_A.innerSVG());
+
+            // rectangle
+            let rect_A = s.rect(10, 20, 30, 40).attr({
+                stroke: "pink",
+                strokeWidth: 3,
+                fill: "none",
+            });
+
+            // polyline
+            let polyline_A = s
+                .polyline([0, 280, 150, 75, 580, 10, 300, 150])
+                .attr({
+                    stroke: "lightgreen",
+                    strokeWidth: 3,
+                    fill: "none",
+                });
+
+            // circle
+            let circle_A = s.circle(300, 250, 50).attr({
+                stroke: "lightblue",
+                strokeWidth: 3,
+                fill: "none",
+            });
+
+            // polygon
+            let polygon_A = s.polygon([20, 60, 130, 170, 0, 0]).attr({
+                stroke: "lightblue",
+                strokeWidth: 3,
+                fill: "lightgrey",
+            });
+
+            // path
+            let pathDescription = "M 150 250 L 100 200";
+            let path_A = s.path(pathDescription).attr({
+                stroke: "lightblue",
+                strokeWidth: 3,
+                fill: "lightgrey",
+            });
+            let pathDescriptionB = "M 150 250 l -100 200";
+            s.path(pathDescriptionB).attr({
+                stroke: "red",
+                strokeWidth: 3,
+                strokeDasharray: "5,1,3",
+                fill: "lightgrey",
+            });
+            // ******************************* V intro
+        </script>
+    </body>
+</html>

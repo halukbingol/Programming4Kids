@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>z-1-circle</title>
+        <link rel="shortcut icon" href="../zintBundle/svg/01pi.svg" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"
+            integrity="sha512-Gk+uNk8NWN235mIkS6B7/424TsDuPDaoAsUekJCKTWLKP6wlaPv+PBGfO7dbvZeibVPGW+mYidz0vL0XaWwz4w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+        <h1>z-2-circle</h1>
+        <svg
+            id="id_svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="600"
+            height="300"
+        ></svg>
+
+        <script>
+            "use strict"; // keep this
+
+            // ******************************* V intro
+            const s = Snap("#id_svg");
+            s.attr({
+                viewBox: "0 0 600 300",
+            });
+            // ******************************* A intro
+        </script>
+
+        <script>
+            // "use strict"; // keep this
+
+            // // ******************************* V intro
+            // let bigCircle = s.circle(150, 150, 100);
+            // console.log(bigCircle.outerSVG());
+            // bigCircle.attr({
+            //     fill: "#bada55",
+            //     stroke: "#000",
+            //     strokeWidth: 5,
+            // });
+            // let smallCircle = s.circle(100, 150, 70);
+            // // ******************************* A intro
+        </script>
+        <script>
+            "use strict"; // keep this
+
+            let nCircles;
+            let x0;
+            let y0;
+            let r;
+
+            x0 = 10;
+            y0 = 30;
+            r = 10;
+            nCircles = 5;
+            for (let i = 0; i < nCircles; i++) {
+                s.circle(x0 + 2 * r * i, y0, r);
+            }
+        </script>
+        <script>
+            "use strict"; // keep this
+
+            function lineNS(x0, y0, r, nCircles) {
+                for (let i = 0; i < nCircles; i++) {
+                    s.circle(x0, y0 + 2 * r * i, r).attr({
+                        fill: "#bada55",
+                        stroke: "#000",
+                        strokeWidth: 5,
+                    });
+                }
+            }
+            function lineEW(x0, y0, r, nCircles) {
+                for (let i = 0; i < nCircles; i++) {
+                    s.circle(x0 + 2 * r * i, y0, r).attr({
+                        fill: "#bada55",
+                        stroke: "#000",
+                        strokeWidth: 5,
+                    });
+                }
+            }
+
+            function lineNESW(x0, y0, r, nCircles) {
+                for (let i = 0; i < nCircles; i++) {
+                    s.circle(
+                        x0 + 2 * r * i,
+                        y0 + 2 * r * nCircles - 2 * r * i,
+                        r
+                    ).attr({
+                        fill: "#bada55",
+                        stroke: "#000",
+                        strokeWidth: 5,
+                    });
+                }
+            }
+
+            function lineNWSE(x0, y0, r, nCircles) {
+                for (let i = 0; i < nCircles; i++) {
+                    s.circle(x0 + 2 * r * i, y0 + 2 * r * i, r).attr({
+                        fill: "#bada55",
+                        stroke: "#000",
+                        strokeWidth: 5,
+                    });
+                }
+            }
+
+            // lineEW(100, 100, 10, 8);
+            // lineNS(100, 100, 10, 8);
+            // lineNESW(100, 100, 10, 8);
+            lineNWSE(80, 100, 10, 8);
+        </script>
+    </body>
+</html>

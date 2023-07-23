@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>circleMoving-Bora Erden</title>
+        <!-- <link rel="shortcut icon" href="../zintBundle/svg/01pi.svg" /> -->
+        <link rel="shortcut icon" href="https://www.01pi.com/zintBundle/ZintLib/svg/01pi.svg" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"
+            integrity="sha512-Gk+uNk8NWN235mIkS6B7/424TsDuPDaoAsUekJCKTWLKP6wlaPv+PBGfO7dbvZeibVPGW+mYidz0vL0XaWwz4w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+        <h1>circleMoving by Bora Erden</h1>
+        
+
+        <svg
+            id="id_svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1000"
+            height="500"
+        ></svg>
+        <button onclick="moveLeft()">Left</button>
+        <button onclick="moveRight()">Right</button>
+        <button onclick="moveUp()">Up</button>
+        <button onclick="moveDown()">Down</button>
+        <button onclick="moveLeft1()">L</button>
+        <button onclick="moveRight1()">R</button>
+        <button onclick="moveUp1()">U</button>
+        <button onclick="moveDown1()">D</button>
+        
+
+        <script>
+            "use strict"; // keep this
+
+            // ******************************* V intro
+            const s = Snap("#id_svg");
+            s.attr({
+                viewBox: "0 0 1000 500",
+            });
+            // ******************************* A intro
+        </script>
+
+        <script>
+            // "use strict"; // keep this
+
+            // ******************************* V intro
+            // let circleMoving = s.circle(150, 150, 100);
+            // circleMoving.attr({
+            //     fill: "#bada55",
+            //     stroke: "#000",
+            //     strokeWidth: 5,
+            // });
+            // ******************************* A intro
+        </script>
+        <script>refreshPosition();</script>
+        
+
+        <script src="circleMoving.js"></script>
+        
+    </body>
+</html>
