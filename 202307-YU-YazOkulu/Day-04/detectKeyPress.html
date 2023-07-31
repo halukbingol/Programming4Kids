@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>detectKeyPress</title>
+    <link rel="shortcut icon" href="../zintBundle/svg/01pi.svg" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"
+      integrity="sha512-Gk+uNk8NWN235mIkS6B7/424TsDuPDaoAsUekJCKTWLKP6wlaPv+PBGfO7dbvZeibVPGW+mYidz0vL0XaWwz4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>detectKeyPress</h1>
+
+    <svg
+      id="id_svg"
+      xmlns="http://www.w3.org/2000/svg"
+      width="600"
+      height="300"
+    ></svg>
+
+    <script>
+      const KEY_A = 97; // 65;
+      const KEY_B = 98; // 66;
+
+      this.addEventListener("keypress", (event) => {
+        // if (event.key === "a" || event.key === "A") {
+        let keyCode = event.keyCode;
+        console.log("key pressed:" + keyCode);
+        if (event.key === "a" || event.key === "A") {
+            // if (keyCode == KEY_A) {
+          keyA();
+        } else if (event.keyCode == KEY_B) {
+          keyB();
+        }
+      });
+
+      function keyA() {
+        alert("key: A");
+        // TODO process for A
+      }
+
+      function keyB() {
+        alert("key: B");
+        // TODO process for A
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>circleMoving</title>
+    <link rel="shortcut icon" href="../zintBundle/svg/01pi.svg" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"
+      integrity="sha512-Gk+uNk8NWN235mIkS6B7/424TsDuPDaoAsUekJCKTWLKP6wlaPv+PBGfO7dbvZeibVPGW+mYidz0vL0XaWwz4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>circleMovingV2</h1>
+
+    <svg
+      id="id_svg"
+      xmlns="http://www.w3.org/2000/svg"
+      width="600"
+      height="300"
+    ></svg>
+    <div>
+      Ball navigation<br />
+      <button onclick="moveLeft(ballA)">L</button>
+      <button onclick="moveRight(ballA)">R</button>
+      <button onclick="moveDown(ballA)">D</button>
+      <button onclick="moveUp(ballA)">U</button>
+    </div>
+    <div>
+        Animation
+        <button onclick="animateStart(ballA)">start</button>
+        <button onclick="animateReset(ballA)">reset</button>
+    </div>
+
+    <script src="circleMovingV2.js"></script>
+  </body>
+</html>

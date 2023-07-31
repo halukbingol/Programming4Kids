@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>timer</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="idText">0</h1>
+    </div>
+    <div>
+      <button onclick="timerSet()">timerSet</button>
+      <button onclick="timerReset()">timerReset</button>
+    </div>
+    <script src="hbMiniLib.js"></script>
+    <script>
+      let timerID;
+
+      function timerSet() {
+        timerID = setInterval(() => {
+          doIt();
+        }, 1000);
+      }
+
+      function timerReset() {
+        clearInterval(timerID);
+      }
+
+      function doIt() {
+        incrementText(elText);
+      }
+
+      // init
+      const elText = document.querySelector("#idText");
+      setText(elText, 0);
+    </script>
+  </body>
+</html>
