@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>forFirstTime</title>
+    <link rel="shortcut icon" href="../zintBundle/svg/01pi.svg" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"
+      integrity="sha512-Gk+uNk8NWN235mIkS6B7/424TsDuPDaoAsUekJCKTWLKP6wlaPv+PBGfO7dbvZeibVPGW+mYidz0vL0XaWwz4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>circle with parameters</h1>
+    <svg
+      id="id_svg"
+      xmlns="http://www.w3.org/2000/svg"
+      width="600"
+      height="300"
+    ></svg>
+
+    <script>
+      "use strict"; // keep this
+
+      // ******************************* V intro
+      const s = Snap("#id_svg");
+      s.attr({
+        viewBox: "0 0 600 300",
+      });
+      // ******************************* A intro
+    </script>
+
+    <script>
+      "use strict"; // keep this
+
+      // // v1
+      // s.circle(100, 150, 20);
+      // s.circle(140, 150, 20);
+      // s.circle(180, 150, 20);
+
+      // // v2
+      // let x0 = 100;
+      // s.circle(x0, 150, 20);
+      // s.circle(x0+40, 150, 20);
+      // s.circle(x0+80, 150, 20);
+      // s.circle(x0+40, 190, 20);
+      // s.circle(x0+40, 230, 20);
+
+      // // v3
+      // let x0 = 200;
+      // let y0 = 150;
+      // s.circle(x0, y0, 20);
+      // s.circle(x0 + 40, y0, 20);
+      // s.circle(x0 + 80, y0, 20);
+      // s.circle(x0 + 40, y0 + 40, 20);
+      // s.circle(x0 + 40, y0 + 80, 20);
+
+      // // v4
+      // let x0 = 200;
+      // let y0 = 150;
+      // let r = 10;
+      // s.circle(x0, y0, r);
+      // s.circle(x0 + 2 * r, y0, r);
+      // s.circle(x0 + 4 * r, y0, r);
+      // s.circle(x0 + 2 * r, y0 + 2 * r, r);
+      // s.circle(x0 + 2 * r, y0 + 4 * r, r);
+
+      // // v5
+      // let x0 = 200;
+      // let y0 = 150;
+      // let r = 20;
+      // let d = 2 * r;
+      // s.circle(x0 + 0 * d, y0 + 0 * d, r);
+      // s.circle(x0 + 1 * d, y0 + 0 * d, r);
+      // s.circle(x0 + 2 * d, y0 + 0 * d, r);
+      // s.circle(x0 + 1 * d, y0 + 1 * d, r);
+      // s.circle(x0 + 1 * d, y0 + 2 * d, r);
+
+      // v6
+      let x0 = 20;
+      let y0 = 15;
+      let r = 5;
+      let d = 2 * r;
+      for (let i = 0; i < 5; i++) {
+        // console.log(i);
+        // s.circle(x0 + i* d, y0 + 2 * d, r);
+        s.circle(x0, y0 + i * d, r);
+      }
+      // ******************************* A intro
+    </script>
+  </body>
+</html>
