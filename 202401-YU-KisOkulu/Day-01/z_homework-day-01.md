@@ -22,7 +22,10 @@ This week
 - We practice to describe a path to a dummy, which will be our computer.
 - We learn how to draw a circle in `z-30-circle.html`.
 
-# To do
+
+
+
+# Goal
 (Every student should do this part.)
 
 1. Make sure that the directory structure in your disk is as given below, where 
